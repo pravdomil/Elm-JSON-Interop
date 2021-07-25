@@ -3426,14 +3426,14 @@ var $elm$parser$Parser$deadEndsToString = function (deadEnds) {
 var $author$project$Main$errorToString = function (v) {
 	switch (v.$) {
 		case 0:
-			return 'Usage: elm-json-interop <File.elm>...';
+			return 'Usage: elm-json-interop <File.elm>...\n';
 		case 1:
 			var b = v.a;
 			var c = v.b;
-			return 'I can\'t parse \"' + (b + ('\", because: ' + ($elm$parser$Parser$deadEndsToString(c) + '.')));
+			return 'I can\'t parse \"' + (b + ('\", because: ' + ($elm$parser$Parser$deadEndsToString(c) + '.\n')));
 		default:
 			var b = v.a;
-			return 'elm-json-interop failed: ' + $author$project$Interop$JavaScript$errorToString(b);
+			return 'elm-json-interop failed: ' + ($author$project$Interop$JavaScript$errorToString(b) + '\n');
 	}
 };
 var $author$project$Main$BadArguments = {$: 0};
