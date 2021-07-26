@@ -107,6 +107,20 @@ maybeField name a =
             )
 
 
+json : Decoder a -> Decoder a
+json decoder =
+    D.string
+        |> D.andThen
+            (\v ->
+                case D.decodeString decoder v of
+                    Ok vv ->
+                        D.succeed vv
+
+                    Err vv ->
+                        D.fail (D.errorToString vv)
+            )
+
+
 
 --
 
